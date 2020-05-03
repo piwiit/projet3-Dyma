@@ -67,6 +67,11 @@ hr {
 ::placeholder {
   color: var(--dark);
 }
+.underline {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+  margin-bottom: 2rem;
+}
 
 /* utility */
 
@@ -96,7 +101,7 @@ hr {
   border-radius: 0.5rem;
   cursor: pointer;
   border: 0;
-  transition: all 0.2s;
+  transition: all 0.5s;
 }
 
 .btn-light {
@@ -255,4 +260,62 @@ nav {
   padding: 1rem 0;
   margin-right: 1rem;
   outline: 0;
+}
+/* content */
+.content {
+  margin: 3rem 0;
+  display: flex;
+  align-items: flex-start;
+}
+.articles {
+  flex: auto;
+}
+.articles article {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "title img"
+    "author img"
+    "details img";
+  margin-bottom: 2rem;
+}
+.articles article h3,
+.articles article p {
+  margin: 0.2rem;
+}
+.articles article img {
+  grid-area: img;
+}
+.articles article h3 {
+  grid-area: title;
+}
+.articles article p:first-child {
+  grid-area: content;
+}
+.articles article .article-author {
+  grid-area: author;
+}
+.articles .article .text-hint {
+  grid-area: details;
+}
+.popular {
+  flex: 350px;
+  padding: 0 3rem;
+  position: sticky;
+  top: 45px;
+}
+.popular ul li {
+  display: grid;
+  grid-template-columns: 50px auto;
+  place-items: center center;
+  margin-bottom: 1rem;
+}
+.popular ul li div:first-child {
+  font-size: 3rem;
+  color: var(--gray-hint);
+}
+.popular ul li p,
+.popular ul li h3 {
+  margin: 0.2rem;
 }
